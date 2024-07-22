@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masonry</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        background: blue;
+        margin: 5px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://masonry.desandro.com/masonry.pkgd.min.js"></script>
+    <script>
+      // 페이지가 완전히 로드되면 이 코드가 실행됩니다.
+      $(document).ready(function () {
+        // 100개의 박스를 만듭니다.
+        for (let i = 0; i < 100; i++) {
+          $("<div></div>")
+            .addClass("box")
+            .css({
+              width: 100, // 박스의 너비를 100픽셀로 설정합니다.
+              height: Math.floor(Math.random() * 100) + 50, // 박스의 높이를 50픽셀에서 150픽셀 사이로 랜덤으로 설정합니다.
+            })
+            .appendTo("body"); // 만든 박스를 웹 페이지의 본문(body)에 추가합니다.
+        }
+        // Masonry를 사용하여 박스들을 예쁘게 정렬합니다.
+        $("body").masonry({
+          columnWidth: 110, // 각 열의 너비를 110픽셀로 설정합니다.
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 화면 크기에 맞게 조정합니다 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery 라이브러리를 포함합니다 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      // 웹 페이지가 다 준비되면 실행됩니다
+      $(document).ready(function () {
+        // .box 클래스에 스타일(모양)을 적용합니다
+        $(".box").css("float", "left"); // 왼쪽으로 정렬합니다
+        $(".box").css("margin", 10); // 여백을 10px 줍니다
+        $(".box").css("width", 100); // 너비를 100px로 설정합니다
+        $(".box").css("height", 100); // 높이를 100px로 설정합니다
+        $(".box").css("backgroundColor", "hotpink"); // 배경색을 핫핑크로 설정합니다
+      });
+    </script>
+  </head>
+  <body>
+    <!-- .box 클래스가 적용된 세 개의 박스가 있습니다 -->
+    <div class="box">dd</div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </body>
+</html>

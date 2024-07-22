@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 화면 크기에 맞게 조정합니다 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery 라이브러리를 포함합니다 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      // 웹 페이지가 다 준비되면 실행됩니다
+      $(document).ready(function () {
+        // #box 요소에 스타일을 적용합니다
+        $("#box")
+          .css({
+            width: 100, // 너비를 100px로 설정합니다
+            height: 100, // 높이를 100px로 설정합니다
+            background: "red", // 배경색을 빨간색으로 설정합니다
+            position: "absolute", // 절대 위치를 사용합니다
+            left: 10, // 왼쪽에서 10px 떨어진 위치에 배치합니다
+            top: 10, // 위쪽에서 10px 떨어진 위치에 배치합니다
+          })
+          // 첫 번째 애니메이션을 설정합니다
+          .animate(
+            {
+              width: 300, // 너비를 300px로 변경합니다
+              opacity: 0.5, // 투명도를 0.5로 변경합니다 (50% 투명)
+            },
+            1000 // 1초 동안 애니메이션을 실행합니다
+          )
+          // 두 번째 애니메이션을 설정합니다
+          .animate(
+            {
+              opacity: 1, // 투명도를 1로 변경합니다 (불투명)
+              left: 100, // 왼쪽에서 100px 떨어진 위치로 이동합니다
+              top: 200, // 위쪽에서 200px 떨어진 위치로 이동합니다
+            },
+            1000 // 1초 동안 애니메이션을 실행합니다
+          );
+      });
+    </script>
+  </head>
+  <body>
+    <!-- 스타일과 애니메이션이 적용될 상자 요소입니다 -->
+    <div id="box"></div>
+  </body>
+</html>

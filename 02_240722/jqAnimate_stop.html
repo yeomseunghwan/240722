@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery 라이브러리를 포함합니다. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        // 애니메이션 큐를 클리어할지 여부를 나타내는 변수입니다.
+        let clearQueue = false;
+        // 애니메이션을 끝까지 진행할지 여부를 나타내는 변수입니다.
+        let goToEnd = false;
+
+        // clearQueue 체크박스의 상태가 변경될 때 실행되는 이벤트 핸들러입니다.
+        $("#clearQueue").change(function () {
+          // clearQueue 변수의 값을 체크박스의 체크 상태로 설정합니다.
+          clearQueue = $(this).prop("checked");
+        });
+
+        // goToEnd 체크박스의 상태가 변경될 때 실행되는 이벤트 핸들러입니다.
+        $("#goToEnd").change(function () {
+          // goToEnd 변수의 값을 체크박스의 체크 상태로 설정합니다.
+          goToEnd = $(this).prop("checked");
+        });
+
+        // Stop 버튼이 클릭될 때 실행되는 이벤트 핸들러입니다.
+        $("#stopButton").click(function () {
+          // clearQueue와 goToEnd 변수의 값에 따라 애니메이션을 중지합니다.
+          $("#box").stop(clearQueue, goToEnd);
+        });
+
+        // #box 요소의 스타일을 설정합니다.
+        $("#box").css({
+          width: 100, // 너비를 100px로 설정합니다.
+          height: 100, // 높이를 100px로 설정합니다.
+          background: "red", // 배경색을 빨간색으로 설정합니다.
+        });
+
+        // 3초마다 실행되는 타이머를 설정합니다.
+        setInterval(function () {
+          $("#box")
+            .animate(
+              {
+                width: 200, // 너비를 200px로 애니메이션합니다.
+              },
+              1000 // 애니메이션 지속시간은 1000ms(1초)입니다.
+            )
+            .delay(1000) // 1000ms(1초) 동안 대기합니다.
+            .animate(
+              {
+                width: 100, // 너비를 100px로 애니메이션합니다.
+                height: 100, // 높이를 100px로 애니메이션합니다.
+              },
+              1000 // 애니메이션 지속시간은 1000ms(1초)입니다.
+            );
+        }, 3000); // 3000ms(3초)마다 위의 애니메이션을 반복합니다.
+      });
+    </script>
+  </head>
+  <body>
+    <!-- 사용자 입력 양식입니다. -->
+    <label for="clearQueue">clearQueue</label>
+    <input id="clearQueue" type="checkbox" />
+    <br />
+    <label for="goToEnd">goToEnd</label>
+    <input id="goToEnd" type="checkbox" />
+    <br />
+    <button id="stopButton">Stop</button>
+    <!-- 애니메이션을 실행할 요소입니다. -->
+    <div id="box"></div>
+  </body>
+</html>

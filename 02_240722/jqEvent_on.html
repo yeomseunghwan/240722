@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 화면 크기에 맞게 조정합니다 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery 라이브러리를 포함합니다 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      // 웹 페이지가 다 준비되면 실행됩니다
+      $(document).ready(function () {
+        // #box 요소에 스타일을 적용하고 이벤트를 연결합니다
+        $("#box")
+          .css({
+            width: 100, // 너비를 100px로 설정합니다
+            height: 100, // 높이를 100px로 설정합니다
+            background: "hotpink", // 배경색을 핫핑크로 설정합니다
+          })
+          // 요소를 클릭하면 배경색을 빨간색으로 변경합니다
+          .on("click", function () {
+            $(this).css("background", "red");
+          })
+          // 요소에 마우스를 올리면 배경색을 파란색으로 변경합니다
+          .on("mouseenter", function () {
+            $(this).css("background", "blue");
+          })
+          // 요소에서 마우스를 내리면 배경색을 주황색으로 변경합니다
+          .on("mouseleave", function () {
+            $(this).css("background", "orange");
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- 스타일과 이벤트가 적용될 상자 요소입니다 -->
+    <div id="box"></div>
+  </body>
+</html>

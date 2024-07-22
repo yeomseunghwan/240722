@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 페이지가 다양한 화면 크기에 맞게 반응하도록 설정합니다. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery 라이브러리를 포함합니다. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      // 문서가 준비되면 실행될 함수를 정의합니다.
+      $(document).ready(function () {
+        // 버튼에 클릭 이벤트 핸들러를 연결합니다.
+        $("button").click(function () {
+          // .page 클래스를 가진 요소에 페이드 토글 효과를 적용합니다.
+          // 페이드 토글은 요소의 가시성을 애니메이션으로 전환합니다.
+          $(".page").fadeToggle("slow"); // "slow"는 애니메이션의 속도를 느리게 설정합니다.
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- 사용자가 클릭할 수 있는 버튼입니다. -->
+    <button>Toggle Show</button>
+    <!-- 페이드 토글 효과가 적용될 요소입니다. -->
+    <div class="page">
+      <!-- 헤딩 요소입니다. -->
+      <h1>Lorem ipsum dolor sit amet.</h1>
+      <!-- 단락 요소입니다. -->
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, non.
+      </p>
+    </div>
+  </body>
+</html>

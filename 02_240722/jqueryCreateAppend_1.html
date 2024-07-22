@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jQuery 라이브러리를 가져옵니다. jQuery는 자바스크립트 라이브러리로, HTML을 쉽게 조작할 수 있게 도와줍니다. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      // 문서가 완전히 로드된 후 실행될 함수를 정의합니다.
+      $(document).ready(function () {
+        // 10회 반복하는 반복문을 시작합니다.
+        for (let i = 0; i < 10; i++) {
+          // 새로운 <h1> 태그를 생성합니다.
+          // "Create Document Object + i"는 텍스트 내용입니다. i는 현재 반복문의 숫자를 의미합니다.
+          $("<h1>Create Document Object " + i + "</h1>")
+            .css({
+              // <h1> 태그의 배경 색상을 파란색으로 설정합니다.
+              backgroundColor: "blue",
+              // <h1> 태그의 글자 색상을 핫핑크로 설정합니다.
+              color: "hotpink",
+            })
+            // 생성한 <h1> 태그를 문서의 <body> 요소에 추가합니다.
+            .appendTo("body");
+        }
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
